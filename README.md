@@ -5,6 +5,8 @@ Use uv but
  - create environments in a central location 
  - with more conda-like syntax
 
+Proof of concept for windows cmd.
+
 # Install instructions:
 
  - git clone https://github.com/TheDerivator/uve.git
@@ -13,8 +15,13 @@ Use uv but
  - run install.bat
  - Add %UVE_DIR%/bin to your path
 
+If you use Visual Studio Code, you can also add `"python.venvFolders": ["C:\\uve\\envs"]` to your settings.json, (or wherever your environments are).
+
 # Testing
 
+Verify that `where uve` gives you `%UVE_DIR%/bin/uve.bat`
+
+Install environment:
 ```
 uve env list
 uve create -n my_env python=3.13 matplotlib pandas
