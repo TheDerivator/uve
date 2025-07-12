@@ -26,8 +26,10 @@ Install environment:
 uve env list
 uve create -n my_env python=3.13 matplotlib pandas
 uve activate my_env
-uve install my_env
+uve install -n my_env plotly
 ```
+
+Experimental! Many commands are not supported!
 
 # How it works
 
@@ -35,7 +37,8 @@ uve install my_env
 2. Calling `uve ...` will trigger the bat script.
 3. If the command was activate, it will activate the environment and exit.
 3. Otherwise, it passes the command to uvx
-4. uvx can run the wheel directly, passing it to the uve module
+4. uvx can run the wheel directly, passing it to the uve module.
+5. uve.py will examine the commands and execute `uv pip install --python %UVE_DIR%/envs/my_env ...`
 
 This project is a POC (Proof of Concept) so for safety the script will ask you to confirm the commands.
 
